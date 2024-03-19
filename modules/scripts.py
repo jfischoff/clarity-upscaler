@@ -462,7 +462,11 @@ def load_scripts():
     # processing_script is not considered though
     for scriptfile in scripts_list:
         try:
+            print("loading script", scriptfile.filename)
+            print("loading from extension", scriptfile.basedir)
+            print("script_path", paths.script_path)
             if scriptfile.basedir != paths.script_path:
+                print("adding to sys.path", scriptfile.basedir)
                 sys.path = [scriptfile.basedir] + sys.path
             current_basedir = scriptfile.basedir
 
