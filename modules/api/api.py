@@ -36,6 +36,7 @@ import numpy as np
 import cv2
 
 def script_name_to_index(name, scripts):
+    print("scripts", scripts)
     try:
         return [script.title().lower() for script in scripts].index(name.lower())
     except Exception as e:
